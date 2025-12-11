@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam</title>
+</head>
+<body>
+<h2>Exam Page</h2>
+<div id="app"></div>
+
+<script>
+let questions = [];
+let index = 0;
+
+async function load() {
+  let res = await fetch("http://localhost:5000/questions");
+  questions = await res.json();
+  show();
+}
+
+function show() {
+  if (index >= questions.length) {
+    document.body.innerHTML = "<h2>Exam Completed</h2>";
+    return;
+  }
+
+  let q = questions[index];
+  document.getElementById("app").innerHTML = `
+    <h3>${q.question}</h3>
+    ${q.options.map(o => 
+      `<button onclick="next('${o}')">${o}</button><br>`
+    ).join("")}
+  `;
+}
+
+function next(ans) {
+  index++;
+  show();
+}
+
+load();
+</script>
+</body>
+</html>
