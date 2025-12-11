@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "question": "What is the main goal of Yoga for Human Excellence?",
+    "options": ["Physical health", "Mental clarity", "Human transformation", "Entertainment"],
+    "answer": "Human transformation"
+  },
+  {
+    "id": 2,
+    "question": "Which practice improves emotional balance?",
+    "options": ["Asanas", "Pranayama", "Laughter", "Running"],
+    "answer": "Pranayama"
+  }
+]
